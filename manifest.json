@@ -2,15 +2,8 @@
     "name": "Karteikartengenerator",
     "short_name": "Karteikarten",
     "description": "Ein einfaches Tool zum Erstellen und Verwalten von digitalen Karteikarten",
-    "start_url": "/",
-    "display": "standalone",
+    "start_url": "/index.html",
+    "display": "fullscreen",
     "background_color": "#f8fafc",
-    "theme_color": "#2563eb",
-    "icons": [
-        {
-            "src": "icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+    "theme_color": "#2563eb"
 } 
