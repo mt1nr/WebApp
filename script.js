@@ -4,11 +4,7 @@ class Flashcard {
         this.id = Date.now();
         this.question = question;
         this.answer = answer;
-        // Erstellungsdatum für spätere Berechnungen der Wiederholungsintervalle
-        this.createdAt = new Date();
-
-        // Status der letzten Bewertung (correct/incorrect/null)
-        this.status = null;
+        this.status = null; // Status der letzten Bewertung (correct/incorrect/null)
     }
 
     // Konvertiert ein Objekt in eine Flashcard-Instanz
@@ -16,7 +12,6 @@ class Flashcard {
     static fromObject(obj) {
         const card = new Flashcard(obj.question, obj.answer);
         card.id = obj.id;
-        card.createdAt = new Date(obj.createdAt);
         card.status = obj.status;
         return card;
     }
@@ -129,7 +124,7 @@ class FlashcardManager {
             card.status = correct ? 'correct' : 'incorrect';
             this.saveFlashcards();
             
-            // Aktualisiert den Status der Karteikarte im DOM
+            // Aktualisiert den Status der Karteikarte im Document Object Model
             const cardElement = document.querySelector(`.flashcard[data-id="${id}"]`);
             if (cardElement) {
                 cardElement.classList.remove('flashcard-correct', 'flashcard-incorrect');
